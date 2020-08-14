@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <!--{{ dump() }}-->
+     <table id="view">
+        <tr>
+            <th>ID</th>
+            <th>URL</th>
+            <th>Code</th>
+            <th>Count</th>
+        </tr>
+        {% for shortUrl in shortUrls %}
+        <tr>
+            <td>{{ shortUrl.id }}</td>
+            <td>{{ shortUrl.url }}</td>
+            <td><a target="_blank" href="/{{ shortUrl.short }}">{{ shortUrl.short }}</a></td>
+            <td>{{ shortUrl.count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
